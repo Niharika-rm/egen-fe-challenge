@@ -1,0 +1,85 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="../bower_components/angular-bootstrap/ui-bootstrap-csp.css">
+
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+    </head>
+    <body>
+    <div class="body" ng-app="myApp">
+
+        <div class="wrapper" ng-controller="MyCtrl">
+
+
+
+            <div class="template">
+                <h4>Template Filter</h4>
+                <div class="info">Input: {{codeVal+phoneVal}}</div>
+                <div class="info">Output: {{codeVal.toString()+phoneVal.toString() | tel}}</div>
+            </div>
+            <div class="comp">
+                <h4>Component Filter</h4>
+                <div class="info">Input: {{componentNumber}}</div>
+                <div class="info">Output: {{filterText}}</div>
+            </div>
+
+            <div class="btn-group" uib-dropdown is-open="status.isopen">
+                <button id="single-button" type="button" class="btn btn-success" uib-dropdown-toggle ng-disabled="disabled">
+                    Choose your Country <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                    <li ng-click="setValue(1)" role="menuitem"><a href="#">United States of America</a></li>
+                    <li ng-click="setValue(93)" role="menuitem"><a href="#">Afghanistan</a></li>
+                    <li ng-click="setValue(54)" role="menuitem"><a href="#">Argentina</a></li>
+                    <li ng-click="setValue(61)" role="menuitem"><a href="#">Australia</a></li>
+                    <li ng-click="setValue(43)" role="menuitem"><a href="#">Austria</a></li>
+
+                    <li ng-click="setValue(32)" role="menuitem"><a href="#">Belgium</a></li>
+                    <li ng-click="setValue(56)" role="menuitem"><a href="#">Chile</a></li>
+                    <li ng-click="setValue(86)" role="menuitem"><a href="#">China</a></li>
+                    <li ng-click="setValue(57)" role="menuitem"><a href="#">Colombia</a></li>
+
+                    <li ng-click="setValue(45)" role="menuitem"><a href="#">Denmark</a></li>
+                    <li ng-click="setValue(20)" role="menuitem"><a href="#">Egypt</a></li>
+
+                    <li ng-click="setValue(33)" role="menuitem"><a href="#">France</a></li>
+                    <li ng-click="setValue(49)" role="menuitem"><a href="#">Germany</a></li>
+
+                    <li ng-click="setValue(30)" role="menuitem"><a href="#">Greece</a></li>
+
+
+                    <li ng-click="setValue(91)" role="menuitem"><a href="#">India</a></li>
+
+                    <li ng-click="setValue(39)" role="menuitem"><a href="#">Italy</a></li>
+                    <li ng-click="setValue(81)" role="menuitem"><a href="#">Japan</a></li>
+
+                    <li ng-click="setValue(47)" role="menuitem"><a href="#">Norway</a></li>
+                    <li ng-click="setValue(51)" role="menuitem"><a href="#">Peru</a></li>
+                </ul>
+            </div>
+
+            <input class="input-code" type='text' size="4" code-input value={{model.id}} ng-model="codeVal" bowermaxlength="2" ng-bind="codeVal | tel"/>
+            <input class="input-phone" type='text' size="15" phone-input ng-model="phoneVal" maxlength="10" ng-bind="phoneVal | tel"/>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-cookies.js"></script>
+    <script src="js/main.js"></script>
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="../node_modules/angular-cookies/angular-cookies.min.js"></script>
+
+    </body>
+</html>
